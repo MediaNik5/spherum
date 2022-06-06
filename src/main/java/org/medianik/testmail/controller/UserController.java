@@ -29,7 +29,7 @@ public class UserController{
     }
 
     @ApiResponse(responseCode = "400", description = "money.zero-or-negative. Money value must be positive.")
-    @PostMapping("/add-money")
+    @PostMapping("/add_money")
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void addMoney(
         @CurrentUser PostgresUserDetails userDetails,

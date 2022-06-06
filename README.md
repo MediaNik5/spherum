@@ -1,5 +1,4 @@
 # Test task for spherum
-
 ## Plain java
 
 To run you must have java-17.
@@ -11,6 +10,49 @@ Run:
 mvn clean install spring-boot:repackage -DskipTests
 java -jar ./target/spherum-1.0.0.jar
 ```
+
+Go to http://localhost:8080/swagger-ui/index.html#/
+
+You might specify log file and input json config file as follows:
+
+```
+java -jar ./target/spherum-1.0.0.jar logPath configPath
+```
+
+Config file must be in format:
+```json
+{
+  "books": [
+    {
+      "author": "Стив Макконелл",
+      "name": "Совершенный код",
+      "price": 1000,
+			"amount": 7
+    },
+    {
+      "author": "Брюс Эккель",
+      "name": "Философия Java",
+      "price": 1500,
+			"amount": 15
+    },
+    {
+      "author": "Joshua Bloch",
+      "name": "Effective Java",
+      "price": 2500,
+			"amount": 10
+    }
+  ]
+}
+```
+
+You first must signup and login to work with api. See swagger for details.
+
+To pop up your balance, you must use endpoint 
+```http request
+localhost:8080/add_money
+```
+
+Then you can buy books, see the prices, add books to the market and so on...
 
 ## Docker
 
