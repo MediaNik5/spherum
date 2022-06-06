@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.medianik</groupId>
-	<artifactId>testmail</artifactId>
+	<artifactId>spherum</artifactId>
 	<version>1.0.0</version>
-	<name>testmail</name>
+	<name>spherum</name>
 	<description>Test project for mail</description>
 	<properties>
 		<java.version>17</java.version>

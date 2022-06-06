@@ -46,18 +46,17 @@ public class TestmailApplication{
 
         @Override
         public void run(String... args) throws Exception{
+            var market = marketRepository.findById(1L).orElseGet(Market::new);
+
+            if(!market.getBooks().isEmpty())
+                return;
+
             if(args.length >= 2){
-                var market = marketRepository.findById(1L).orElseGet(Market::new);
-
-                if(!market.getBooks().isEmpty())
-                    return;
-
                 var contents = new ObjectMapper().readTree(new File(args[1]));
                 var bookItems = inputToBookItems(contents.get("books"));
                 market.getBooks().addAll(bookItems);
-
-                marketRepository.save(market);
             }
+            marketRepository.save(market);
         }
 
         @NotNull
